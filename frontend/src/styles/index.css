@@ -1,0 +1,29 @@
+/* Import Google Fonts at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+/* Define Global Color Variables */
+:root {
+  --primary-blue: #0077CC;
+  --light-blue: #00AEEF;
+  --sky-blue: #76DAFF;
+  --soft-blue: #EAF8FF;
+  --white: #FFFFFF;
+  --neutral-grey: #6B7280;
+}
+
+/* Global Typography and Base Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  background-color: var(--soft-blue-background);
+  color: var(--neutral-grey);
+}
+
+p{
+  font-family: poppins, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  color: var(--primary-blue);
+}

@@ -1,0 +1,241 @@
+.hero-section {
+  position: relative; /* This is the key to layering child elements */
+  height: 100vh; /* Make the section fill the entire screen height */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  overflow: hidden; /* Prevents video from spilling out */
+  color: white; /* Set default text color for this section */
+  text-align: center;
+}
+
+/* Container for the video element */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place the video behind everything else */
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the area without distortion */
+}
+
+/* Dark overlay for better text readability */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent black */
+  z-index: 1;
+}
+
+/* Container for the text and button */
+.hero-content {
+  position: relative; /* Ensure it respects the flexbox centering */
+  z-index: 2; /* Place it on top of the overlay */
+  max-width: 800px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.hero-content img {
+    height: 20rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--light-blue);
+}
+
+.hero-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  /* color: white; */
+  color: black;
+  /* background-image: linear-gradient(to bottom, var(--light-blue), var(--sky-blue)); */
+  background-color: var(--soft-blue);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.5s ease;
+  margin-top: 2rem;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+    background-image: linear-gradient(to top, var(--light-blue), var(--sky-blue));
+}
+
+.hero-button:focus {
+    outline: none;
+}
+.hero-button:active{
+    background-image: linear-gradient(to bottom, var(--light-blue), var(--sky-blue));
+}
+
+
+
+/* block2 */
+
+.products-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.products-section h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.products-section p {
+  font-size: 1.5rem;
+  color: #6B7280; /* Neutral grey from your plan */
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+
+.product-grid {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 40px auto; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 2rem 0rem;
+}
+
+
+.view-all-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0077CC;
+  background-color: transparent;
+  border: 2px solid #0077CC;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-all-button:hover {
+  background-color: #0077CC;
+  color: white;
+}
+
+
+
+/* block 3 */
+
+.features-section {
+  background-color: var(--soft-blue); /* Soft blue background */
+  padding: 2rem;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2rem;
+  /* margin-bottom: 1rem; */
+  font-weight: bold;
+  background-color: var(--soft-blue); /* Soft blue background */
+}
+
+.features-section p{
+  font-size: 1.1rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0rem;
+}
+
+.feature-item {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.feature-item .icon {
+  font-size: 3rem; /* Placeholder for icon font or SVG */
+  color: #0077CC;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.feature-item svg{
+  height: 50px;
+  width: 50px;
+}
+
+.feature-item h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--primary-blue);
+}
+
+.feature-item p {
+  color: #6B7280;
+  line-height: 1.6;
+  width: 18rem;
+}
+
+
+/* --- General Styles for content sections --- */
+.content-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+/* responsiveness */
+
+@media (max-width: 768px) {
+  .hero-content img {
+    height: 14rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--light-blue);
+}
+
+.video-container video {
+  width: 100%;
+  height: 90%;
+  object-fit: cover; /* Ensures the video covers the area without distortion */
+}
+}

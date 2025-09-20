@@ -1,0 +1,16 @@
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-blue);
+    background-image: linear-gradient(to left, var(--light-blue), var(--primary-blue));
+    padding: 4rem 0rem;
+}
+
+.products-container h3{
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0rem;
+    padding: 1rem;
+}
