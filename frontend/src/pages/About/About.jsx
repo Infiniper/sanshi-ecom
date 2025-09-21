@@ -59,7 +59,6 @@ function About(){
                     <p className='quality-text'>We celebrate individual style and believe that true beauty comes from authenticity and self-expression.</p>
                 </div>
                 </div>
-
             </div>
         </div>
     );

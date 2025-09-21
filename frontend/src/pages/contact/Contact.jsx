@@ -53,7 +53,7 @@ function Contact() {
     };
 
     return (
-        <div>
+        <div className='container'>
             <div className='title'>
                 <div><h1>Contact Us</h1></div>
                 <div><p>Have questions about our products or want to get in touch? We'd love to hear from you!</p></div>
@@ -141,13 +141,13 @@ function Contact() {
                         <div className='detail-tiles' style={{ 'background-image': 'linear-gradient(to bottom, white, var(--sky-blue))'}}>
                             <h4>Rameshwar Singh</h4>
                             <p>Founder & CEO</p>
-                            <p style={{'font-size':'1rem'}}>8601588012</p>
+                            <p style={{'font-size':'0.8rem'}}>8601588012</p>
                             <p>Business inquiries, partnerships, general questions</p>
                         </div>
                         <div className='detail-tiles' style={{ 'background-image': 'linear-gradient(to bottom, white, var(--sky-blue))'}}>
                             <h4>Kartikay Singh</h4>
                             <p>Co-Founder & CTO</p>
-                            <p style={{'font-size':'1rem'}}>6306733058, 7398997884</p>
+                            <p style={{'font-size':'0.8rem'}}>6306733058, 7398997884</p>
                             <p>Technical support, product questions, operations</p>
                         </div>
                         <div className='detail-tiles'>

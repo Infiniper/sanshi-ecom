@@ -17,6 +17,7 @@
     font-size: 3rem;
     font-weight: bold;
     color: white;
+    margin-bottom: 0rem;
 }
 
 .about-title p{
@@ -124,8 +125,9 @@
 
 .story p{
     font-size: 1rem;
-    color: #7b9eaf;
+    color: var(--neutral-grey);
     margin: 1rem 0rem;
+    font-family: 'Inter', 'Poppins', sans-serif;
 }
 
 .quality-container{
@@ -159,7 +161,8 @@
 
 .quality p{
     font-size: 1rem;
-    color: #7b9eaf;
+    color: var(--neutral-grey);
+        font-family: 'Inter', 'Poppins', sans-serif;
     margin: 1rem 0rem;
 }
 
@@ -172,9 +175,11 @@
 
 .emoji{
     background-color: var(--primary-blue);
-    padding: 1rem;
-    margin: 1rem;
     border-radius: 4rem;
+    padding: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .quality .quality-text{

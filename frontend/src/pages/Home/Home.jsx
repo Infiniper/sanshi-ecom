@@ -6,79 +6,81 @@ import axios from "axios";
 import { Sparkles, Star, ShoppingBag, Award } from "lucide-react";
 
 function Home() {
-  const [categories, setCategories] = useState([]);
+  // 1. Renamed state to be more descriptive (products instead of categories)
+  const [featuredProducts, setFeaturedProducts] = useState([]);
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const fetchFeaturedProducts = async () => {
       try {
+        // 2. Updated the API endpoint to fetch featured products
         const response = await axios.get(
-          "https://sanshi-h2o-backend.onrender.com/api/categories"
-        ); // Fetch data from backend
-        // const response = await axios.get('http://localhost:5000/api/categories');
-        console.log("printing response.data: ", response.data);
-        if (response.data && response.data.categories) {
-          setCategories(response.data.categories);
+          "http://localhost:5000/api/products?featured=true"
+        );
+        
+        // 3. Accessed the 'products' array from the response data
+        if (response.data && response.data.products) {
+          setFeaturedProducts(response.data.products);
         }
-        console.log("Fetched Category Data: ", categories);
       } catch (error) {
-        console.error("Error fetching categories:", error);
+        console.error("Error fetching featured products:", error);
       }
     };
 
-    fetchCategories();
-  }, []);
+    fetchFeaturedProducts();
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <div>
       {/* block 1 */}
       <div className="hero-section">
         <div className="video-container">
-          <video
-            src="homeVideo.mp4"
-            autoPlay
-            loop
-            muted
-          ></video>
+          <video src="/homeVideo.mp4" autoPlay loop muted></video>
         </div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <img src="logoHome.svg" alt="logo" />
-          <Link to="/about">
-            <button className="hero-button">Learn More</button>
-          </Link>
+
+          <a href="/about"><button className="hero-button">Learn More</button></a>
+            
+
         </div>
       </div>
 
       {/* block 2 */}
       <div className="products-section">
-        <h2>Our Products</h2>
-        <p>Discover our range of premium beverages</p>
+        {/* Changed title to reflect featured products */}
+        <h2>Featured Products</h2>
+        <p>Discover our handpicked range of stylish accessories</p>
         <div className="product-grid">
-          {categories.map((item) => {
-            return (
-              <CategoryCard
-                imageUrl={item.image_url}
-                name={item.name}
-                description={item.description}
-                availability={item.availability}
-              />
-            );
-          })}
+          {/* 4. Mapped over 'featuredProducts' state */}
+          {featuredProducts.map((product) => (
+            <CategoryCard
+              // 5. Added a unique 'key' prop (important for React lists)
+              key={product.id}
+              imageUrl={product.image_url}
+              name={product.name}
+              // 6. Matched prop names to the JSON data ('short_description' and 'in_stock')
+              description={product.short_description}
+              availability={product.in_stock}
+            />
+          ))}
         </div>
-        <Link to="/products">
-          <button className="view-all-button">View All Products</button>
-        </Link>
+        {/* <Link to="/products"> */}
+        <a href="/products"><button className="view-all-button">View All Products</button></a>
+          
+        {/* </Link> */}
       </div>
 
       {/* block 3 */}
       <div className="features-section">
         <h2>Why Choose Sanshi?</h2>
-        <p>Simple, seamless shopping — we list, you click, you purchase on your favorite marketplace.</p>
+        <p>
+          Simple, seamless shopping — we list, you click, you purchase on your
+          favorite marketplace.
+        </p>
         <div className="features-grid">
           <div className="feature-item">
-            <div
-              className="icon"
-            >
+            <div className="icon">
               <Sparkles color="white" />
             </div>
             <div>
@@ -89,9 +91,7 @@ function Home() {
             </div>
           </div>
           <div className="feature-item">
-            <div
-              className="icon"
-            >
+            <div className="icon">
               <Star color="white" />
             </div>
             <div>
@@ -102,9 +102,7 @@ function Home() {
             </div>
           </div>
           <div className="feature-item">
-            <div
-              className="icon"
-            >
+            <div className="icon">
               <ShoppingBag color="white" />
             </div>
             <div>
@@ -115,9 +113,7 @@ function Home() {
             </div>
           </div>
           <div className="feature-item">
-            <div
-              className="icon"
-            >
+            <div className="icon">
               <Award color="white" />
             </div>
             <div>

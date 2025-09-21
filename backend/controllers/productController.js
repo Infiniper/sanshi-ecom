@@ -1,7 +1,10 @@
 // backend/controllers/productController.js
 const { supabase } = require('../utils/db');
 
-// Helper for pagination
+/**
+ * Helper: parse pagination params
+ * Returns { page, limit, from, to }
+ */
 const parsePagination = (pageStr, limitStr) => {
   const page = parseInt(pageStr, 10) || 1;
   const limit = Math.min(Math.max(parseInt(limitStr, 10) || 20, 1), 200);
@@ -10,14 +13,22 @@ const parsePagination = (pageStr, limitStr) => {
   return { page, limit, from, to };
 };
 
-// GET /api/products?search=&page=&limit=&featured=true
+/**
+ * GET /api/products
+ * Query params:
+ *  - search (string)
+ *  - page (int)
+ *  - limit (int)
+ *  - featured (true/false or 1/0)
+ *
+ * Response: { products: [...], meta: { page, limit, returned } }
+ */
 exports.listProducts = async (req, res, next) => {
   try {
     const { search, page, limit, featured } = req.query;
     const { from, to } = parsePagination(page, limit);
 
-    // Build base query selecting product fields + nested images & links
-    // Using PostgREST nested select: product_images(...) and product_links(...)
+    // 1) Build base select (do not apply range/order yet)
     let query = supabase
       .from('products')
       .select(`
@@ -32,32 +43,44 @@ exports.listProducts = async (req, res, next) => {
         created_at,
         product_images ( url, alt_text, position ),
         product_links ( platform, url, label )
-      `)
+      `);
+
+    // 2) Search - OR across name and short_description (case-insensitive)
+    if (search) {
+      const term = `%${search}%`;
+      // PostgREST expects a comma-separated list for OR
+      // e.g. name.ilike.%term%,short_description.ilike.%term%
+      query = query.or(`name.ilike.${term},short_description.ilike.${term}`);
+    }
+
+    // 3) Featured filter - support true/false and 1/0
+    if (typeof featured !== 'undefined') {
+      const f = String(featured).toLowerCase();
+      if (f === 'true' || f === '1') {
+        query = query.eq('is_featured', true);
+      } else if (f === 'false' || f === '0') {
+        query = query.eq('is_featured', false);
+      } // else: ignore invalid values
+    }
+
+    // 4) Apply ordering and pagination
+    query = query
       .order('is_featured', { ascending: false })
       .order('created_at', { ascending: false })
       .range(from, to);
 
-    // Search by name or short_description if provided
-    if (search) {
-      const term = `%${search}%`;
-      // ilike works case-insensitive
-      query = query.or(`name.ilike.${term},short_description.ilike.${term}`);
-    }
-
-    // Filter by featured flag
-    if (featured === 'true' || featured === '1') {
-      query = query.eq('is_featured', true);
-    }
-
-    const { data, error, count } = await query;
-
+    // 5) Execute
+    const { data, error } = await query;
     if (error) throw error;
 
-    // Map items to include a 'image_url' (first image) and 'links' array
+    // 6) Normalize results: pick first image as image_url and provide links array
     const products = (data || []).map((p) => {
       const imgs = p.product_images || [];
       const links = p.product_links || [];
-      const firstImage = imgs.length > 0 ? imgs.sort((a,b) => (a.position || 0) - (b.position || 0))[0] : null;
+      const firstImage = imgs.length > 0
+        ? imgs.sort((a, b) => (a.position || 0) - (b.position || 0))[0]
+        : null;
+
       return {
         id: p.id,
         name: p.name,
@@ -87,7 +110,10 @@ exports.listProducts = async (req, res, next) => {
   }
 };
 
-// GET /api/products/:id
+/**
+ * GET /api/products/:id
+ * Returns detailed product with all images and links
+ */
 exports.getProduct = async (req, res, next) => {
   try {
     const id = parseInt(req.params.id, 10);
@@ -115,13 +141,13 @@ exports.getProduct = async (req, res, next) => {
       .single();
 
     if (error) {
-      if (error.code === 'PGRST116' || error.message && error.message.includes('No rows found')) {
+      // handle "no rows found" gracefully
+      if (error.code === 'PGRST116' || (error.message && error.message.includes('No rows found'))) {
         return res.status(404).json({ error: 'Product not found' });
       }
       throw error;
     }
 
-    // Normalize response
     const imgs = data.product_images || [];
     const links = data.product_links || [];
 
@@ -138,7 +164,7 @@ exports.getProduct = async (req, res, next) => {
       inventory_count: data.inventory_count,
       created_at: data.created_at,
       updated_at: data.updated_at,
-      images: imgs.sort((a,b) => (a.position || 0) - (b.position || 0)),
+      images: imgs.sort((a, b) => (a.position || 0) - (b.position || 0)),
       links: links.map(l => ({ platform: l.platform, url: l.url, label: l.label }))
     };
 

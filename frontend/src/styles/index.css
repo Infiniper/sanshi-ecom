@@ -16,7 +16,7 @@
   --primary-blue: #EB487F;
   --light-blue: #FF78A6;
   --sky-blue: #F4E1E5;
-  --soft-blue: red;
+  --soft-blue: #FFF4F7;
   /* --soft-blue: #FFF4F7; */
   --white: #FFFFFF;
   --neutral-grey: #6B7280;
@@ -39,13 +39,11 @@ white = FFFFFF
 body {
   margin: 0;
   font-family: 'Roboto', 'Open Sans', sans-serif;
-  background-color: var(--soft-blue);
-  color: var(--neutral-grey);
 }
 
 p{
+  font-family:  'Inter', 'Poppins', sans-serif;
   font-family: 'playfair';
-  /* font-family: poppins, sans-serif; */
 }
 
 h1, h2, h3, h4, h5, h6 {
