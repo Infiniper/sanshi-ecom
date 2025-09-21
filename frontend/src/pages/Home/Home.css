@@ -1,13 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,500;1,500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-blue: #EB487F;
+  --light-blue: #FF78A6;
+  --sky-blue: #F4E1E5;
+  /* --soft-blue: red; */
+  --soft-blue: #FFF4F7;
+  --white: #FFFFFF;
+  --neutral-grey: #6B7280;
+  --emphasis: #300B15;
+}
+
 .hero-section {
   position: relative; /* This is the key to layering child elements */
   height: 100vh; /* Make the section fill the entire screen height */
-  width: 100%;
+  max-width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: baseline;
   overflow: hidden; /* Prevents video from spilling out */
   color: white; /* Set default text color for this section */
   text-align: center;
+  padding-left: 4rem;
+  padding-top: 3rem;
 }
 
 /* Container for the video element */
@@ -23,7 +38,7 @@
 .video-container video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the area without distortion */
+  object-fit:cover; /* Ensures the video covers the area without distortion */
 }
 
 /* Dark overlay for better text readability */
@@ -73,14 +88,15 @@
 
 .hero-button:hover {
     transform: scale(1.05);
-    background-image: linear-gradient(to top, var(--light-blue), var(--sky-blue));
+    background-color: var(--primary-blue);
+    color: white;
 }
 
 .hero-button:focus {
     outline: none;
 }
 .hero-button:active{
-    background-image: linear-gradient(to bottom, var(--light-blue), var(--sky-blue));
+    background-color: var(--light-blue);
 }
 
 
@@ -123,16 +139,16 @@
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: bold;
-  color: #0077CC;
+  color: var(--primary-blue);
   background-color: transparent;
-  border: 2px solid #0077CC;
+  border: 2px solid var(--primary-blue);
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .view-all-button:hover {
-  background-color: #0077CC;
+  background-color: var(--primary-blue);
   color: white;
 }
 
@@ -142,7 +158,7 @@
 
 .features-section {
   background-color: var(--soft-blue); /* Soft blue background */
-  padding: 2rem;
+  padding: 0.5rem;
   text-align: center;
 }
 
@@ -163,35 +179,37 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   margin: 2rem 0rem;
 }
 
 .feature-item {
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  margin:0rem;
 }
 
 .feature-item .icon {
   font-size: 3rem; /* Placeholder for icon font or SVG */
-  color: #0077CC;
+  /* color: #0077CC; */
   margin-bottom: 1rem;
   border-radius: 100%;
-  height: 70px;
-  width: 70px;
+  height: 65px;
+  width: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
   margin-top: 1rem;
+  background-color: var(--primary-blue);
 }
 
 .feature-item svg{
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 
 .feature-item h4 {

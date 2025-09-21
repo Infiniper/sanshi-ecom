@@ -107,6 +107,29 @@ function Contact() {
                     <div className='contact-info'>
                         {/* You can add contact info here later */}
                     </div>
+                    <div
+            className="detail-tiles social-links"
+            style={{
+              backgroundImage:
+                "linear-gradient(to bottom, var(--color-surface), var(--color-accent))",
+            }}
+          >
+            <a href="https://www.linkedin.com" target="_blank">
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            {/* <a href="https://github.com/Infiniper">
+              <i className="fa-brands fa-github"></i>
+            </a> */}
+            <a href="https://x.com" target="_blank">
+              <i className="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a href="mailto:ngcngroup@gmail.com">
+              <i className="fa-solid fa-envelope"></i>
+            </a>
+          </div>
                 </div>
                 <div className='details'>
                     <div className='details-title'>
@@ -122,7 +145,7 @@ function Contact() {
                             <p>Business inquiries, partnerships, general questions</p>
                         </div>
                         <div className='detail-tiles' style={{ 'background-image': 'linear-gradient(to bottom, white, var(--sky-blue))'}}>
-                            <h4>Kartik Singh</h4>
+                            <h4>Kartikay Singh</h4>
                             <p>Co-Founder & CTO</p>
                             <p style={{'font-size':'1rem'}}>6306733058, 7398997884</p>
                             <p>Technical support, product questions, operations</p>

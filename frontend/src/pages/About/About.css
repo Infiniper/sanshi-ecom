@@ -61,7 +61,7 @@
 
 .founder-msg p{
     color: var(--neutral-grey);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     width: 85%;
     padding: 1rem;
 }
@@ -94,7 +94,7 @@
 
 .cofounder-msg p{
     color: var(--neutral-grey);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     width: 85%;
     padding: 1rem;
 }
@@ -168,11 +168,13 @@
     font-size: 1.2rem;
     color: var(--primary-blue);
     font-weight: bold;
-
 }
 
-.emoji p{
-    font-size: 2.5rem;
+.emoji{
+    background-color: var(--primary-blue);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 4rem;
 }
 
 .quality .quality-text{

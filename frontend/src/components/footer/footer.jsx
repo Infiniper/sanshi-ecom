@@ -14,12 +14,12 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.description}>
         <img
-          src="/h2o_logo.svg"
+          src="/logoHome.svg"
           alt="Sanshi H2O Logo"
           className={styles.logo}
         />
         <p>
-          Sanshi H2O is dedicated to providing pure, fresh, and revitalizing beverages to quench your thirst.
+          Discover beautiful accessories that celebrate everyday sparkle. We curate thoughtfully chosen pieces that tell a story and complement your unique style..
         </p>
       </div>
 

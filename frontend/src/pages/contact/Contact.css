@@ -60,7 +60,7 @@
     border: 1px solid #608a9f;
 }
 .form .elements input::placeholder{
-    color: #608a9f;
+    color: var(--tertiary);
 }
 
 
@@ -75,12 +75,13 @@
     padding: 0.25rem 0.5rem;
 }
 .form .elements textarea::placeholder{
-    color: #608a9f;
+    color:var(--tertiary);
 }
 
 .elements button{
     color: var(--soft-blue);
-    background-image: linear-gradient(to left, var(--sky-blue), var(--primary-blue));
+    /* background-image: linear-gradient(to left, var(--sky-blue), var(--primary-blue)); */
+    background-color: var(--primary-blue);
     font-size: 1rem;
     font-weight: bold;
     width: 90%;
@@ -105,9 +106,12 @@
 .contact-container{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     /* align-items: center; */
     justify-content: center
+}
+
+.contact{
+    width: 55%;
 }
 
 .details{
@@ -118,7 +122,7 @@
     background-color: var(--soft-blue);
     margin: 1rem;
     padding: 2rem;
-    width: 650px;
+    width: 40%;
     border-radius: 1rem;
     box-shadow: 0 8px 24px rgba(0, 119, 204, 0.1); /* Subtle blue shadow */
 }
@@ -131,7 +135,7 @@
 .details h4{
     font-size: 1.25rem;
     font-weight: bold;
-    color: #0077CC;
+    color: var(--primary-blue);
 }
 
 .detail-tiles{
@@ -158,4 +162,39 @@
     color: #608a9f;
     margin: 0.1rem;
     padding: 0px;
+}
+
+
+.social-links {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 1rem;
+}
+
+.social-links a {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.social-links a:hover {
+    color: var(--emphasis);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 900px) {
+    .contact{
+        width: 90%;
+    }
+    .contact-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    .details{
+        width: 90%;
+    }
+
 }
