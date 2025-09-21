@@ -29,7 +29,7 @@ function Contact() {
 
         try {
             // Make a POST request to your backend endpoint
-            const response = await axios.post('https://sanshi-h2o-backend.onrender.com/api/contact', {
+            const response = await axios.post('http://localhost:5000/api/contact', {
                 name: formData.name,
                 email: formData.email,
                 message: formData.message
@@ -97,7 +97,7 @@ function Contact() {
                                 required
                             ></textarea>
                         </div>
-                        <div className='elements'>
+                        <div className='elements sm-btn'>
                             {/* The button's default type is 'submit' inside a form */}
                             <button type="submit">Send Message</button>
                         </div>
@@ -141,13 +141,13 @@ function Contact() {
                         <div className='detail-tiles' style={{ 'background-image': 'linear-gradient(to bottom, white, var(--sky-blue))'}}>
                             <h4>Rameshwar Singh</h4>
                             <p>Founder & CEO</p>
-                            <p style={{'font-size':'0.8rem'}}>8601588012</p>
+                            <p style={{'font-size':'1rem'}}>7398997884</p>
                             <p>Business inquiries, partnerships, general questions</p>
                         </div>
                         <div className='detail-tiles' style={{ 'background-image': 'linear-gradient(to bottom, white, var(--sky-blue))'}}>
                             <h4>Kartikay Singh</h4>
                             <p>Co-Founder & CTO</p>
-                            <p style={{'font-size':'0.8rem'}}>6306733058, 7398997884</p>
+                            <p style={{'font-size':'1rem'}}>7398997884</p>
                             <p>Technical support, product questions, operations</p>
                         </div>
                         <div className='detail-tiles'>

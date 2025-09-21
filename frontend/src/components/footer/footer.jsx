@@ -38,10 +38,8 @@ const Footer = () => {
         <h4>Contact Us</h4>
         <ul>
           {/* // Updated contact details */}
-          <li><p>📍 Lucknow, Uttar Pradesh</p></li>
+          <li><p>📍 Gorakhpur, Uttar Pradesh</p></li>
           <li><p>📞 +91 7398997884</p></li>
-          <li><p>📞 +91 6306733058 (Founder)</p></li>
-          <li><p>📞 +91 8601588012 (Co-founder)</p></li>
           <li><p>📧 support@sanshih2o.com</p></li>
         </ul>
       </div>

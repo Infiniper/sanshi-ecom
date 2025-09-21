@@ -188,6 +188,13 @@
     transform: scale(1.1);
 }
 
+.sm-btn button:hover {
+  transition: background-color 0.4s ease, color 0.2s ease-in-out;
+}
+.sm-btn button:hover {
+  background-color: var(--emphasis);
+}
+
 @media screen and (max-width: 900px) {
     .contact{
         width: 90%;
