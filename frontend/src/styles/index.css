@@ -1,29 +1,57 @@
 /* Import Google Fonts at the very top */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,500;1,500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Define Global Color Variables */
-:root {
+/* :root {
   --primary-blue: #0077CC;
   --light-blue: #00AEEF;
   --sky-blue: #76DAFF;
   --soft-blue: #EAF8FF;
   --white: #FFFFFF;
   --neutral-grey: #6B7280;
+} */
+/* Define Global Color Variables */
+:root {
+  --primary-blue: #EB487F;
+  --light-blue: #FF78A6;
+  --sky-blue: #F4E1E5;
+  --soft-blue: red;
+  /* --soft-blue: #FFF4F7; */
+  --white: #FFFFFF;
+  --neutral-grey: #6B7280;
+  --emphasis: #300B15;
 }
+
+/* 
+colors:
+Primary = EB487F
+emphasis = 300B15
+accent = FF78A6
+secondary = F4E1E5
+tertiary = 6B7280
+background = FFF4F7
+white = FFFFFF 
+*/
+
 
 /* Global Typography and Base Styles */
 body {
   margin: 0;
   font-family: 'Roboto', 'Open Sans', sans-serif;
-  background-color: var(--soft-blue-background);
+  background-color: var(--soft-blue);
   color: var(--neutral-grey);
 }
 
 p{
-  font-family: poppins, sans-serif;
+  font-family: 'playfair';
+  /* font-family: poppins, sans-serif; */
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', 'Poppins', sans-serif;
+  font-family: 'playfair';
   color: var(--primary-blue);
 }
+
+

@@ -18,7 +18,7 @@ function Navbar() {
     return (
         <div className='nav-elements'>
             <div className='logo'>
-            <Link to="/"><button><img src="favicon.svg" alt="Logo" /></button></Link>
+            <Link to="/"><button><img src="fevicon.svg" alt="Logo" /></button></Link>
             </div>
             <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                 <Link to="/"><button><p>Home</p></button></Link>

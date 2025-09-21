@@ -97,7 +97,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  background-color: #0077CC; /* Primary blue */
+  background-color: var(--primary-blue); /* Primary blue */
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -106,5 +106,5 @@
 }
 
 .product-card-button:hover {
-  background-color: #00AEEF; /* Lighter blue on hover */
+  background-color: var(--light-blue); /* Lighter blue on hover */
 }
