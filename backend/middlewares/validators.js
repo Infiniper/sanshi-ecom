@@ -1,3 +1,4 @@
+// backend/middlewares/validator.js
 const { body, query, validationResult } = require('express-validator');
 
 const validate = (rules) => [
@@ -10,24 +11,17 @@ const validate = (rules) => [
 ];
 
 const contactRules = validate([
-  body('name').trim().isLength({ min: 1 }),
-  body('email').isEmail(),
-  body('message').trim().isLength({ min: 1 })
+  body('name').trim().isLength({ min: 1 }).withMessage('Name required'),
+  body('email').optional().isEmail().withMessage('Invalid email'),
+  body('message').trim().isLength({ min: 1 }).withMessage('Message required')
 ]);
 
-const orderRules = validate([
-  body('customer').isObject(),
-  body('customer.name').trim().isLength({ min: 2 }),
-  body('customer.phone').trim().isLength({ min: 7 }),
-  body('customer.email').optional().isEmail(),
-  body('customer.address').trim().isLength({ min: 5 }),
-  body('items').isArray({ min: 1 }),
-  body('items.*.product_id').isInt({ min: 1 }),
-  body('items.*.quantity').isInt({ min: 1 })
-]);
-
+// product query: supports search, page, limit, featured
 const productQueryRules = validate([
-  query('category').optional().isString().isLength({ min: 1 }) // slug
+  query('search').optional().isString().isLength({ min: 1 }),
+  query('page').optional().isInt({ min: 1 }),
+  query('limit').optional().isInt({ min: 1, max: 200 }),
+  query('featured').optional().isIn(['0','1','true','false'])
 ]);
 
-module.exports = { contactRules, orderRules, productQueryRules };
+module.exports = { contactRules, productQueryRules };
