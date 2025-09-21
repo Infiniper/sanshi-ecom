@@ -22,7 +22,7 @@
   color: white; /* Set default text color for this section */
   text-align: center;
   padding-left: 4rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 
 /* Container for the video element */
@@ -157,7 +157,7 @@
 /* block 3 */
 
 .features-section {
-  background-color: var(--soft-blue); /* Soft blue background */
+  background-color: var(--sky-blue); /* Soft blue background */
   padding: 0.5rem;
   text-align: center;
 }
@@ -166,7 +166,7 @@
   font-size: 2rem;
   /* margin-bottom: 1rem; */
   font-weight: bold;
-  background-color: var(--soft-blue); /* Soft blue background */
+  margin-top: 4rem;
 }
 
 .features-section p{
@@ -216,6 +216,7 @@
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  margin-top: 0px;
   color: var(--primary-blue);
 }
 
@@ -223,6 +224,8 @@
   color: #6B7280;
   line-height: 1.6;
   width: 18rem;
+  margin: 0px;
+  padding: 0px;
 }
 
 
@@ -244,6 +247,18 @@
 /* responsiveness */
 
 @media (max-width: 768px) {
+  .hero-section{
+    padding: 0rem;
+    margin: 0rem;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+        background-color: rgba(255, 255, 255, 0.315);
+  }
+  .hero-content{
+    margin: auto;
+    z-index: 2;;
+  }
   .hero-content img {
     height: 14rem;
   margin-bottom: 1rem;
@@ -253,7 +268,7 @@
 
 .video-container video {
   width: 100%;
-  height: 90%;
+  height: 100%;
   object-fit: cover; /* Ensures the video covers the area without distortion */
 }
 }

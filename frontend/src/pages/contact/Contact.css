@@ -1,9 +1,12 @@
+.container{
+    background-color: white;
+}
+
 .title{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-blue);
     background-image: linear-gradient(to left, var(--light-blue), var(--primary-blue));
     padding: 4rem 0rem;
 }
@@ -12,6 +15,7 @@
     font-size: 3rem;
     font-weight: bold;
     color: white;
+    margin-bottom: 0px;
 }
 
 .title p{
@@ -162,6 +166,7 @@
     color: #608a9f;
     margin: 0.1rem;
     padding: 0px;
+        font-family: 'Inter', 'Poppins', sans-serif;
 }
 
 

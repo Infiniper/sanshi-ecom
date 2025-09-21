@@ -12,8 +12,9 @@ function Products(){
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('https://sanshi-h2o-backend.onrender.com/api/products'); // Fetch data from backend
-                // const response = await axios.get('http://localhost:5000/api/products');
+                // Fetch data from backend
+                // const response = await axios.get('https://sanshi-h2o-backend.onrender.com/api/products'); 
+                const response = await axios.get('http://localhost:5000/api/products');
                 console.log("printing response.data: ", response.data);
                 if (response.data && response.data.products) {
                     setProducts(response.data.products);
@@ -37,17 +38,20 @@ function Products(){
             {console.log(products)}
             <h3>All Products</h3>
                 <div className="product-grid">
-                    {
-                        products.map((item => {
-                            return (<ProductCard 
-                                imageUrl={item.image_url}
-                                name={item.name}
-                                description={item.description}
-                                price={item.price}
-                                />
-                            )
-                        }))
-                    }
+{
+    products.map((item => {
+        return (<ProductCard 
+            key={item.id}
+            imageUrl={item.image_url}
+            name={item.name}
+            description={item.short_description}
+            price={item.price}
+            // Safer version using optional chaining
+            link={item.links?.[0]?.url}
+            />
+        )
+    }))
+}
                 </div>
 
 
