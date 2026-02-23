@@ -1,69 +1,84 @@
-# Sanshi H2O 💧
+# Sanshi Ecom
 
-**Kill your thirst.** A modern, full-stack e-commerce website for Sanshi H2O, a beverage company offering a refreshing range of drinks. This project is built with React and Node.js (Express), featuring a clean design and a robust backend.
+**Modern Web Platform for Fashion & Accessories**
 
----
+A full-stack web application for an e-commerce store. Built with React and Express, Sanshi Ecom provides a seamless client-side user experience.
 
-## ✨ Key Features
+### [🌐 Live Demo](https://sanshiecom.netlify.app/)
 
-* **Product Catalog:** Browse a dynamic grid of all available beverages with details and images.
-* **Category Filtering:** Easily filter products by category (e.g., Soda, Mineral Water).
-* **Secure Order Placement:** A secure checkout process that calculates totals on the server to ensure data integrity.
-* **Contact Form:** A functional contact form that stores user submissions directly in the database.
-* **Responsive Design:** A mobile-first approach ensuring a seamless experience on all devices.
-* **(In-Progress) Admin Dashboard:** Future-proofed with placeholders for product, order, and submission management.
+[![Homepage Screenshot](/assets/Sanshi_ecom_homepage.png)](https://sanshiecom.netlify.app/)
 
 ---
 
-## 🚀 Tech Stack
+## ✨ Features
 
--   **Frontend:** React, React Router, CSS Modules, Bootstrap
--   **Backend:** Node.js, Express.js
--   **Database:** PostgreSQL (managed via Supabase)
--   **Deployment:** Netlify (Frontend), Render (Backend)
+- **Frontend Interface**: Fully responsive React UI featuring dynamic product catalogs and category browsing.
+- **API & Routing**: Express-powered RESTful API handling client requests securely.
+- **Database Integration**: Powered by Supabase for reliable data storage and retrieval.
 
 ---
 
-## 🏁 Getting Started
+## 🛠️ Technology Stack
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+- **Frontend**: React, Vite, CSS, Supabase Client
+- **Backend**: Node.js, Express.js,
+- **Database**: Supabase
+- **Tools**: ESLint, Prettier
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-
-* Node.js (v18 or later)
-* npm
-* A free Supabase account for the database.
+- **Node.js** (v16 or higher)
+- **npm** or **yarn**
 
 ### Installation & Setup
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/sanshi-h2o-website.git](https://github.com/your-username/sanshi-h2o-website.git)
-    cd sanshi-h2o-website
-    ```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Infiniper/sanshi-ecom.git
+   cd sanshi-ecom
+   ```
 
-2.  **Setup the Backend (`server`):**
-    ```bash
-    cd server
-    npm install
-    ```
-    -   Create a `.env` file in the `server` directory and add the required environment variables (see below).
-    -   Start the backend server:
-    ```bash
-    npm run dev
-    ```
-    The server will be running on `http://localhost:5000`.
+2. **Install dependencies**
+   Install packages for both the frontend and backend environments:
 
-3.  **Setup the Frontend (`client`):**
-    -   Open a new terminal window.
-    ```bash
-    cd client
-    npm install
-    ```
-    -   Start the frontend development server:
-    ```bash
-    npm run dev
-    ```
-    The React app will open and run on `http://localhost:5173` (or another port if 5173 is busy).
+   ```bash
+   cd frontend && npm install
+   cd ../backend && npm install
+   ```
 
----
+### Configure Environment Variables
+Create a `.env` file in the backend directory with your necessary keys:
+
+```env
+PORT=5000
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_key
+```
+
+### Run the Development Servers
+Open two terminal windows:
+
+**Terminal 1 (Frontend):**
+
+```bash
+cd frontend
+npm run dev
+```
+
+**Terminal 2 (Backend):**
+
+```bash
+cd backend
+npm run dev
+```
+
+## 📧 Contact
+Email: [infiniper@gmail.com](infiniper@gmail.com)
+
+<div align="center">
+<p>Built with ❤️</p>
+<p>⭐ Please star the repo if you find this project useful!</p>
+</div>
