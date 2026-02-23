@@ -7,7 +7,7 @@ function CategoryCard({ imageUrl, name, description, availability }) {
         avail = "Available";
     }
     else {
-        avail = "Comming Soon";
+        avail = "Coming Soon";
     }
 
     return (

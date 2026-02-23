@@ -40,16 +40,16 @@ const Footer = () => {
           {/* // Updated contact details */}
           <li><p>📍 Gorakhpur, Uttar Pradesh</p></li>
           <li><p>📞 +91 7398997884</p></li>
-          <li><p>📧 support@sanshih2o.com</p></li>
+          <li><p>📧 sanshi.main@gmail.com</p></li>
         </ul>
       </div>
 
       <div className={styles.socialMedia}>
         <h4>Follow Us</h4>
         <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="mailto:singhkartik3108199@gmail.com" target="_blank" rel="noopener noreferrer">G-Mail</a></li>
           <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.instagram.com/sanshi_india1567" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </div>
       

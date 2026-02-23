@@ -12,7 +12,7 @@ function ProductCard({ imageUrl, name, description, price, link }) {
                 <h3 className='product-card-name'>{name}</h3>
                 <p className='product-card-description'>{description}</p>
                 <div className='product-price-button-container'>
-                    <p className='product-card-price'>₹{price}</p>
+                    {/* <p className='product-card-price'>₹{price}</p> */}
                     
                     {/* --- MODIFIED SECTION --- */}
                     {/* Conditionally render an <a> tag if a link exists, otherwise show a disabled button */}

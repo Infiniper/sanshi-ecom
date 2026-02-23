@@ -123,10 +123,10 @@ function Contact() {
             <a href="https://x.com" target="_blank">
               <i className="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="https://www.instagram.com" target="_blank">
+            <a href="https://www.instagram.com/sanshi_india1567" target="_blank">
               <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href="mailto:ngcngroup@gmail.com">
+            <a href="mailto:singhkartik3108199@gmail.com">
               <i className="fa-solid fa-envelope"></i>
             </a>
           </div>

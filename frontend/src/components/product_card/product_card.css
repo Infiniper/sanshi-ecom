@@ -55,6 +55,7 @@
 .product-card-content p {
   font-size: 0.9rem;
   padding: 0rem 0.5rem;
+  font-family: 'Inter', 'Poppins', sans-serif;
 }
 
 .product-card-name {
@@ -104,8 +105,10 @@
   transition: background-color 0.3s ease;
   margin-top: auto; /* Aligns the button to the bottom */
   margin-right: 2rem;
+
 }
 
 .product-card-button:hover {
   background-color: var(--light-blue); /* Lighter blue on hover */
+  text-decoration: none;
 }
